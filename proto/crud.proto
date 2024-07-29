@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package crud;
+
+service CrudService {
+  rpc Create (CreateRequest) returns (CreateResponse);
+  rpc Read (ReadRequest) returns (ReadResponse);
+  rpc Update (UpdateRequest) returns (UpdateResponse);
+  rpc Delete (DeleteRequest) returns (DeleteResponse);
+}
+
+message CreateRequest {
+  string id = 1;
+  string data = 2;
+}
+
+message CreateResponse {
+  bool success = 1;
+}
+
+message ReadRequest {
+  string id = 1;
+}
+
+message ReadResponse {
+  string data = 1;
+}
+
+message UpdateRequest {
+  string id = 1;
+  string data = 2;
+}
+
+message UpdateResponse {
+  bool success = 1;
+}
+
+message DeleteRequest {
+  string id = 1;
+}
+
+message DeleteResponse {
+  bool success = 1;
+}
